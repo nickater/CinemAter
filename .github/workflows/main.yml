@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
+    - name: NPM i
+      run: npm i
     - name: Build App
       run: npm run build
     - name: Deploy to Firebase
