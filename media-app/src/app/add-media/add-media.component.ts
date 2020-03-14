@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TabSelectionService } from '../shared/tab-selection.service';
 
 @Component({
   selector: 'app-add-media',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-media.component.scss']
 })
 export class AddMediaComponent implements OnInit {
-
-  constructor() { }
+  selectedTabIndex: number;
+  constructor(public tabService: TabSelectionService) {}
 
   ngOnInit() {
+    this.selectedTabIndex = this.tabService.selectedIndex;
   }
-
 }

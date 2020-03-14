@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AddMediaComponent } from './add-media/add-media.component';
 
 @Component({
@@ -18,8 +14,8 @@ export class AppComponent {
 
   openAddMedia() {
     this.dialog.open(AddMediaComponent, {
-      height: '400px',
-      width: '600px'
+      height: 'auto',
+      width: 'auto'
     });
   }
 }

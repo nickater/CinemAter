@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Media } from 'src/app/shared/media';
+import { MovieDALService } from 'src/app/shared/movie-dal.service';
 
 @Component({
   selector: 'app-list-movies',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-movies.component.scss']
 })
 export class ListMoviesComponent implements OnInit {
+  movies$: Observable<Media[]>;
 
-  constructor() { }
+  constructor(private movieService: MovieDALService) {}
 
   ngOnInit() {
+    this.movies$ = this.movieService.getMovies();
   }
-
 }
