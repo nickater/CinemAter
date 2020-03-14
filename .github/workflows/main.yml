@@ -3,7 +3,6 @@ on:
   push:
     branches:
     - master
-    - develop
 jobs:
   main:
     name: Build and Deploy
@@ -11,6 +10,10 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@master
+    - name: cd into correct directory
+      uses: cd media-app
+    - name: build app
+      uses: npm run build
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.2
       env:
