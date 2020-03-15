@@ -18,10 +18,12 @@ export class ListTvShowsComponent implements OnInit {
   }
 
   deleteTvShow(movieId: string) {
+    console.log(movieId);
     this.tvShowService.deleteTvShow(movieId);
   }
 
   get isAdmin() {
-    return sessionStorage.getItem('isAdmin') || false;
+    // return sessionStorage.getItem('isAdmin') || false;
+    return true;
   }
 }

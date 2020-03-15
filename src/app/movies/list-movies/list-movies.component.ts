@@ -22,6 +22,7 @@ export class ListMoviesComponent implements OnInit {
   }
 
   get isAdmin() {
-    return sessionStorage.getItem('isAdmin') || false;
+    // return sessionStorage.getItem('isAdmin') || false;
+    return true;
   }
 }

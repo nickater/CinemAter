@@ -12,7 +12,9 @@ export class TvShowDALService {
   constructor(private afs: AngularFirestore) {}
 
   getTvShows(): Observable<Media[]> {
-    return this.afs.collection<Media>(this.mediaType).valueChanges();
+    return this.afs
+      .collection<Media>(this.mediaType)
+      .valueChanges({ idField: 'id' });
   }
 
   addTvShow(tvShow: Media) {
