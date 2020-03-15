@@ -1,4 +1,9 @@
 <mat-list *ngFor="let tvShow of tvShows$ | async let i = index">
   <mat-list-item>{{i+1}}) {{tvShow.name}}</mat-list-item>
+  <button *ngIf="isAdmin" class="icon" mat-icon-button>
+    <i (click)="deleteTvShow(tvShow.id)" class="material-icons">
+      delete
+    </i>
+  </button>
   <mat-divider></mat-divider>
 </mat-list>

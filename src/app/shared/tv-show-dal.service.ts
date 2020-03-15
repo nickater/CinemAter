@@ -18,4 +18,11 @@ export class TvShowDALService {
   addTvShow(tvShow: Media) {
     this.afs.collection(this.mediaType).add(tvShow);
   }
+
+  deleteTvShow(tvShowId: string) {
+    this.afs
+      .collection(this.mediaType)
+      .doc(tvShowId)
+      .delete();
+  }
 }

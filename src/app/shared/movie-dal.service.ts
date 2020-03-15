@@ -12,10 +12,17 @@ export class MovieDALService {
   constructor(private afs: AngularFirestore) {}
 
   getMovies(): Observable<Media[]> {
-    return this.afs.collection<Media>('movies').valueChanges();
+    return this.afs.collection<Media>('movies').valueChanges({ idField: 'id' });
   }
 
   addMovie(movie: Media) {
     this.afs.collection(this.mediaType).add(movie);
+  }
+
+  deleteMovie(movieId: string) {
+    this.afs
+      .collection(this.mediaType)
+      .doc(movieId)
+      .delete();
   }
 }

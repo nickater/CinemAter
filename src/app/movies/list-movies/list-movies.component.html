@@ -1,4 +1,11 @@
 <mat-list *ngFor="let movie of movies$ | async let i = index">
-  <mat-list-item>{{i+1}}) {{movie.name}}</mat-list-item>
+  <ng-container>
+    <mat-list-item>{{i+1}}) {{movie.name}}</mat-list-item>
+    <button *ngIf="isAdmin" class="icon" mat-icon-button>
+      <i (click)="deleteMovie(movie.id)" class="material-icons">
+        delete
+      </i>
+    </button>
+  </ng-container>
   <mat-divider></mat-divider>
 </mat-list>

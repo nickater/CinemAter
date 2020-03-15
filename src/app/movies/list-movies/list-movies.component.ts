@@ -16,4 +16,12 @@ export class ListMoviesComponent implements OnInit {
   ngOnInit() {
     this.movies$ = this.movieService.getMovies();
   }
+
+  deleteMovie(movieId: string) {
+    this.movieService.deleteMovie(movieId);
+  }
+
+  get isAdmin() {
+    return sessionStorage.getItem('isAdmin') || false;
+  }
 }

@@ -16,4 +16,12 @@ export class ListTvShowsComponent implements OnInit {
   ngOnInit() {
     this.tvShows$ = this.tvShowService.getTvShows();
   }
+
+  deleteTvShow(movieId: string) {
+    this.tvShowService.deleteTvShow(movieId);
+  }
+
+  get isAdmin() {
+    return sessionStorage.getItem('isAdmin') || false;
+  }
 }
