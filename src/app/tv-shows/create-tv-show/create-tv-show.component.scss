@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  max-width: 350px;
 }
 
 .form-container {
@@ -14,4 +15,17 @@ button {
 
 mat-form-field {
   width: 100%;
+}
+
+mat-checkbox {
+  display: block;
+  margin-bottom: 15px;
+}
+
+mat-radio-button {
+  padding-right: 10px;
+}
+
+.contactInfo {
+  margin-top: 10px;
 }

@@ -13,6 +13,30 @@
             <mat-option value="omg">OMG!</mat-option>
           </mat-select>
         </mat-form-field>
+        <mat-checkbox (change)="toggleNotify()">Notify me when it's ready!</mat-checkbox>
+        <ng-container *ngIf="notify">
+          <mat-radio-group (change)="toggleEmailToText($event)" aria-label="Select an option" value="email">
+            <mat-radio-button value="email">Email</mat-radio-button>
+            <mat-radio-button value="text">Text</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="contactInfo" *ngIf="isEmail; else text">
+            <input matInput type="email" formControlName="contact" placeholder="Email Address">
+          </mat-form-field>
+          <ng-template #text>
+            <mat-form-field class="contactInfo" #text>
+              <input matInput type="tel" maxlength="10" formControlName="contact" placeholder="Phone Number">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Carrier</mat-label>
+              <mat-select formControlName="carrier">
+                <mat-option value="TMobile">T-Mobile</mat-option>
+                <mat-option value="ATT">AT&T</mat-option>
+                <mat-option value="Verzion">Verizon</mat-option>
+                <mat-option value="Sprint">Sprint</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </ng-template>
+        </ng-container>
       </mat-card-content>
     </div>
     <div>

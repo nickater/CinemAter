@@ -5,4 +5,7 @@ export interface Media {
   priority: string;
   downloaded: boolean;
   dateDownloaded: Date;
+  notify?: boolean;
+  contact?: string;
+  carrier?: string;
 }

@@ -1,6 +1,6 @@
 rules_version = '2';
 service cloud.firestore {
-  match /{collectionName}/{documentId} {
-    allow read, write : if collectionName === "movies" || "tvShows";
+  match /{document=**} {
+    allow read, write: if request.time < timestamp.date(2022, 4, 12);
   }
 }
