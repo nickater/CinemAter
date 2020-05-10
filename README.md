@@ -1,4 +1,7 @@
 # MediaApp
+I set out to build a small app that would grow to be an informative queueing application for media desired by friends and family. This app is constantly growing, and usually the most recent build is hosted [here](https://cinemater.nickater.net). 
+
+Enjoy!
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
 
